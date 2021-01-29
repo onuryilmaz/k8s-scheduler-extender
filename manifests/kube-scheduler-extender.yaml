@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    component: kube-scheduler-extender
+    tier: control-plane
+  name: kube-scheduler-extender
+  namespace: kube-system
+spec:
+  containers:
+  - image: onuryilmaz/k8s-scheduler-extender:v1
+    imagePullPolicy: IfNotPresent
+    name: kube-scheduler-extender
+  hostNetwork: true
